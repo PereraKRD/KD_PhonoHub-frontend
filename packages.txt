@@ -1,0 +1,13 @@
+axios 
+react-alert 
+react-alert-template-basic 
+react-bootstrap 
+react-helmet 
+react-redux 
+redux 
+redux-thunk 
+redux-devtools-extension 
+react-router-dom
+mdbreact
+
+npm install --legacy-peer-deps
