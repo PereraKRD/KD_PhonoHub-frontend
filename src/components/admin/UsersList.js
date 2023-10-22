@@ -34,7 +34,7 @@ const UsersList = () => {
             dispatch({ type: DELETE_USER_RESET })
         }
 
-    }, [dispatch, alert, error,isDeleted])
+    }, [dispatch, alert, error,isDeleted,navigate])
 
   const deleteUserHandler = (id) => {
       dispatch(deleteUser(id))
@@ -82,7 +82,7 @@ const UsersList = () => {
                     <Link to={`/admin/user/${user._id}`} className="btn btn-primary py-1 px-2">
                         <i className="fa fa-pencil"></i>
                     </Link>
-                    <button className="btn btn-danger py-1 px-2 ml-2" >
+                    <button className="btn btn-danger py-1 px-2 ml-2" onClick={()=> deleteUserHandler(user._id)}>
                         <i className="fa fa-trash"></i>
                     </button>
                 </Fragment>

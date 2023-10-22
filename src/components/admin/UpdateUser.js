@@ -9,8 +9,8 @@ import { updateUser, getUserDetails, clearErrors } from '../../actions/userActio
 import { UPDATE_USER_RESET } from '../../constants/userConstants'
 import { useNavigate, useParams } from 'react-router-dom'
 
-const UpdateUser = () => {
-    const { id } = useParams();
+const UpdateUser = ({ history, match }) => {
+
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [role, setRole] = useState('')
@@ -20,13 +20,17 @@ const UpdateUser = () => {
     const navigate = useNavigate();
 
     const { error, isUpdated } = useSelector(state => state.user);
-    const { user } = useSelector(state => state.userDetails)
+    const { user } = useSelector(state => state.userDetails);
+
+    const { id } = useParams();
+
+    const userId = id;
 
     useEffect(() => {
 
-        console.log(user && user._id !== id);
-        if (user && user._id !== id) {
-            dispatch(getUserDetails(id))
+        console.log(user && user._id !== userId);
+        if (user && user._id !== userId) {
+            dispatch(getUserDetails(userId))
         } else {
             setName(user.name);
             setEmail(user.email);
@@ -48,7 +52,7 @@ const UpdateUser = () => {
             })
         }
 
-    }, [dispatch, alert, error,isUpdated, id, user])
+    }, [dispatch, alert, error, history, isUpdated, userId, user])
 
     const submitHandler = (e) => {
         e.preventDefault();
