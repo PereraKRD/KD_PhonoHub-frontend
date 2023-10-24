@@ -36,6 +36,7 @@ const UpdateProduct = () => {
     "Laptops",
     "Accessories",
     "Headphones",
+    "Speakers",
   ];
 
   const alert = useAlert();

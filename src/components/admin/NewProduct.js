@@ -26,6 +26,7 @@ const NewProduct = () => {
     "Laptops",
     "Accessories",
     "Headphones",
+    "Speakers",
   ];
 
   const navigate = useNavigate();

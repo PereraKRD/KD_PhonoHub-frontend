@@ -9,7 +9,7 @@ import { updateUser, getUserDetails, clearErrors } from '../../actions/userActio
 import { UPDATE_USER_RESET } from '../../constants/userConstants'
 import { useNavigate, useParams } from 'react-router-dom'
 
-const UpdateUser = ({ history, match }) => {
+const UpdateUser = () => {
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -52,7 +52,7 @@ const UpdateUser = ({ history, match }) => {
             })
         }
 
-    }, [dispatch, alert, error, history, isUpdated, userId, user])
+    }, [dispatch, alert, error, isUpdated, userId, user])
 
     const submitHandler = (e) => {
         e.preventDefault();

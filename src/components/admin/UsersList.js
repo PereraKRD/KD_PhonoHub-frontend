@@ -11,6 +11,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { allUsers, deleteUser, clearErrors } from '../../actions/userActions'
 import { DELETE_USER_RESET } from '../../constants/userConstants'
 
+
+import AOS from "aos";
+import "aos/dist/aos.css"; 
+
 const UsersList = () => {
 
     const alert = useAlert();
@@ -22,6 +26,12 @@ const UsersList = () => {
 
     useEffect(() => {
         dispatch(allUsers());
+
+        AOS.init({
+            duration: 1500,
+            easing: 'ease',
+            once: true,
+          });
 
         if (error) {
             alert.error(error);
@@ -101,7 +111,7 @@ const UsersList = () => {
                     <Sidebar />
                 </div>
 
-                <div className="col-12 col-md-10">
+                <div className="col-12 col-md-10" data-aos="fade-out">
                     <Fragment>
                         <h1 className="my-5">All Users</h1>
 

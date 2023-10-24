@@ -57,8 +57,8 @@ const Dashboard = () => {
                 <div className="card text-white bg-primary o-hidden h-100">
                   <div className="card-body">
                     <div className="text-center card-font-size">
-                      Total Amount
-                      <br /> <b>Rs.56,899</b>
+                      Total Sales
+                      <br /> <b>$6,899</b>
                     </div>
                   </div>
                 </div>
@@ -88,11 +88,11 @@ const Dashboard = () => {
               </div>
 
               <div className="col-xl-3 col-sm-6 mb-3">
-                <div className="card text-white bg-danger o-hidden h-100">
+                <div className="card text-white bg-secondary o-hidden h-100">
                   <div className="card-body">
                     <div className="text-center card-font-size">
                       Orders
-                      <br /> <b>125</b>
+                      <br /> <b>67</b>
                     </div>
                   </div>
                   <Link

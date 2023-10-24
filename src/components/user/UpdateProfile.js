@@ -131,7 +131,7 @@ const onChange = (e) => {
                     type="file"
                     name="avatar"
                     className="custom-file-input"
-                    id="customFile" // Make sure this ID matches the 'for' attribute
+                    id="customFile"
                     accept="image/*"
                     onChange={onChange}
                   />
