@@ -46,9 +46,12 @@ const UsersList = () => {
 
     }, [dispatch, alert, error,isDeleted,navigate])
 
-  const deleteUserHandler = (id) => {
-      dispatch(deleteUser(id))
-   }
+    const deleteUserHandler = (id) => {
+        const shouldDelete = window.confirm('Are you sure you want to delete this user?');
+        if (shouldDelete) {
+            dispatch(deleteUser(id));
+        }
+    }
 
     const setUsers = () => {
         const data = {
